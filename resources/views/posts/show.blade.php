@@ -3,8 +3,6 @@
 @section('title', $post->title)
 
 @section('content')   
-
-    @include('partials.header')
 <div>
     <div class="m-auto px-4 py-8 max-w-xl">
         <div class="bg-white shadow-2xl" >

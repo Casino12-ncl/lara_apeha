@@ -3,13 +3,20 @@
 
         <a href="{{route('home')}}" class="text-2xl no-underline text-grey-darkest hover:text-blue-dark font-sans font-bold">Главная с пивоманами</a><br>
         
-        <a href="{{route('posts.index')}}">
-            <span class="text-xs text-grey-dark">Новости</span>
-        </a>
+        <a href="{{route('posts.index')}}">Все новости</a>
+        <a href="{{route('posts.index')}}">Устав</a>
+        <a href="{{route('posts.index')}}">Состав</a>
+        <a href="{{route('posts.index')}}">Вступление</a>
 
     </div>
 
     <div class="sm:mb-0 self-center">
-        <a href="#" class="text-md no-underline text-grey-darker hover:text-blue-dark ml-2 px-1">Войти</a>
+        @auth('web')
+        <a href="{{ route('logout')}}" class="text-md no-underline text-grey-darker hover:text-blue-dark ml-2 px-1">Выйти</a>
+        @endauth
+        @guest('web')
+        <a href="{{ route('login')}}" class="text-md no-underline text-grey-darker hover:text-blue-dark ml-2 px-1">Войти</a>
+        <a href="{{ route('register')}}" class="text-md no-underline text-grey-darker hover:text-blue-dark ml-2 px-1">Регистрация</a>
+        @endguest
     </div>
 </nav>
