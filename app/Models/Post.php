@@ -18,7 +18,7 @@ class Post extends Model
 
     public function comments()
     {
-        $this->hasmany(Comment::class)->orderBy('created_at');
+        return $this->hasmany(Comment::class)->orderBy('created_at');
 
     }
 }
